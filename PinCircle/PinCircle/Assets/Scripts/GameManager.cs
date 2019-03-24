@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
     public Neddle neddle;
-    public GameObject pinPrefab;
+    public GameObject pinPrefab; 
 	// Use this for initialization
 	void Start () {
 		
@@ -12,15 +12,15 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) //當左鍵被點下的時候
         {
-            //CreatePin();
+            //CreateCircle();
             neddle.isFired = true;
         }
 	}
 
-    void CreatePin()
-    {
-        Instantiate(pinPrefab, new Vector3(0, 0, 0), new Quaternion(0,0,0,0));
+    void CreateCircle() //創建Obj
+    { 
+        Instantiate(pinPrefab, new Vector3(0, 0, 0), new Quaternion(0,0,0,0)); //利用Instantiate函數創造圓圈
     }
 }
