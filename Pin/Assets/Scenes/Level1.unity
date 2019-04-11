@@ -1122,8 +1122,8 @@ MonoBehaviour:
   scoresAudio: {fileID: 231865620}
   message: {fileID: 609269951}
   scoresLabel: {fileID: 360442293}
-  maxScores: 3
-  nextSceneName: Level2
+  maxScores: 5
+  nextSceneName: Level1
   deadSceneName: Level1
 --- !u!4 &803967547
 Transform:

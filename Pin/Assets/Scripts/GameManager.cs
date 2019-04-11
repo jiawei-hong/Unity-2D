@@ -98,6 +98,6 @@ public class GameManager : MonoBehaviour
         isFinished = true;
         Destroy(bigCircle);
         message.gameObject.SetActive(true);
-        message.text = "Click to Continue";
+        message.text = "恭 喜 過 關";
     }
 }
