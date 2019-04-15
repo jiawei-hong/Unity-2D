@@ -13,11 +13,13 @@ public class GameManager : MonoBehaviour
     public int maxScores;
     public string nextSceneName;
     public string deadSceneName;
+    public Text timerText = null;
 
     int scores;
     Needle currentNeedle;
-    bool isGameOver;
+    bool GameOver;
     bool isFinished;
+    float timer = 0;
 
     void Start()
     {
@@ -26,9 +28,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        //timerText.text = ((int)timer).ToString() + "秒";
         if (Input.GetMouseButtonDown(0))
         {
-            if (!isGameOver && !isFinished)
+            if (!GameOver && !isFinished)
             {
                 currentNeedle.isFired = true;
                 SpawnNeedle();            
@@ -76,7 +79,7 @@ public class GameManager : MonoBehaviour
 
     void Die()
     {
-        isGameOver = true;
+        GameOver = true;
         Destroy(bigCircle);
         deadAudio.Play();
         message.gameObject.SetActive(true);
