@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
+using UnityEngine;
 
 public class Needle : MonoBehaviour
 {
@@ -13,8 +13,10 @@ public class Needle : MonoBehaviour
 
     public Action<Needle, Collider2D> OnCollided;
 
+    
+
     void Update()
-    { 
+    {      
         if (isFired)
         {
             transform.Translate(new Vector3(0, speed * Time.deltaTime * 60, 0));

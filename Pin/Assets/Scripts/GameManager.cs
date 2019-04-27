@@ -8,12 +8,13 @@ public class GameManager : MonoBehaviour
     public BigCircle bigCircle;
     public AudioSource deadAudio;
     public AudioSource scoresAudio;
+    public AudioSource backgroundAudio;
     public Text message;
     public Text scoresLabel;
     public int maxScores;
     public string nextSceneName;
     public string deadSceneName;
-    public Text timerText = null;
+    public Text timerText;
 
     int scores;
     Needle currentNeedle;
@@ -24,11 +25,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SpawnNeedle();
+        backgroundAudio.Play();
     }
 
     void Update()
     {
-        //timerText.text = ((int)timer).ToString() + "秒";
         if (Input.GetMouseButtonDown(0))
         {
             if (!GameOver && !isFinished)
@@ -44,6 +45,13 @@ public class GameManager : MonoBehaviour
             {
                 SceneManager.LoadScene(deadSceneName);
             }
+        }
+
+
+        timer += Time.deltaTime;
+        if (GameOver == false && isFinished == false)
+        {
+            timerText.text = "時間：" + ((int)timer).ToString() + "秒";
         }
     }
 
